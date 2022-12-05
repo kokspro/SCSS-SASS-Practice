@@ -1,1 +1,114 @@
-/*# sourceMappingURL=style.css.map */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(51, 51, 51);
+}
+
+header {
+  color: white;
+  background-color: #220743;
+}
+header div {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  height: 80px;
+}
+header div nav input {
+  display: none;
+}
+header div nav label {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  float: right;
+  line-height: 1rem;
+  cursor: pointer;
+}
+header div nav ul {
+  display: flex;
+  list-style-type: none;
+}
+header div nav ul li {
+  padding: 0.5rem;
+  margin-left: 0.2rem;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+header div nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+header div nav ul li:hover {
+  border: 1px solid;
+  border-color: rgb(39, 37, 37) darkgray darkgray rgb(39, 37, 37);
+  background-color: #46128a;
+}
+
+@media (max-width: 768px) {
+  header div nav input:checked ~ ul {
+    right: 0rem;
+  }
+  header div nav label {
+    display: block;
+  }
+  header div nav ul {
+    position: fixed;
+    display: block;
+    flex-direction: column;
+    right: -100%;
+    background-color: #220743;
+    text-align: center;
+    transition: all 0.5s;
+    top: 80px;
+  }
+  header div nav ul li {
+    padding: 0.8rem 3rem 0.8rem 0.8rem;
+  }
+}
+.intro {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10%;
+  align-items: center;
+  color: white;
+  height: 90vh;
+  background-color: #43071c;
+}
+
+.intro1 {
+  opacity: 0%;
+  -webkit-animation: 5s ease 2s testing;
+          animation: 5s ease 2s testing;
+}
+
+.intro2 {
+  opacity: 0%;
+  -webkit-animation: 5s ease 6s testing;
+          animation: 5s ease 6s testing;
+}
+
+.intro3 {
+  opacity: 0%;
+  -webkit-animation: 5s ease 10s testing;
+          animation: 5s ease 10s testing;
+}
+
+@-webkit-keyframes testing {
+  75% {
+    opacity: 100%;
+  }
+}
+
+@keyframes testing {
+  75% {
+    opacity: 100%;
+  }
+}/*# sourceMappingURL=style.css.map */

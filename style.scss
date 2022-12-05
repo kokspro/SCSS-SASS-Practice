@@ -1,0 +1,118 @@
+$primaryColor: #220743;
+$secondaryColor: #43071c;
+$tertiaryColor: #062e08;
+$textColor: white;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(51, 51, 51);
+}
+header {
+    color: $textColor;
+    background-color: $primaryColor;
+    div {
+        display: flex;
+        width: 80%;
+        margin: auto;
+        align-items: center;
+        justify-content: space-between;
+        padding: .5rem;
+        height: 80px;
+        nav {
+            input {
+                display: none;
+            }
+            label {
+                display: none;
+                font-size: 2rem;
+                color: $textColor;
+                float: right;
+                line-height: 1rem;
+                cursor: pointer;
+            }
+            ul {
+                display: flex;
+                list-style-type: none;
+                li {
+                    padding: .5rem;
+                    margin-left: .2rem;
+                    text-transform: uppercase;
+                    font-size: 0.75rem;
+                    a {
+                        text-decoration: none;
+                        color: $textColor;                    
+                    }
+                    &:hover {
+                        border: 1px solid;
+                        border-color: rgb(39, 37, 37) darkgray darkgray rgb(39, 37, 37);
+                        background-color: #46128a;
+                    }
+                }
+                
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        div {
+            nav {
+                input:checked ~ ul {
+                    right: 0rem;
+                }
+                label {
+                    display: block;
+                }
+                ul {
+                    position: fixed;
+                    display: block;
+                    flex-direction: column;
+                    right: -100%;
+                    background-color: $primaryColor;
+                    text-align: center;
+                    transition: all .5s;
+                    top: 80px;
+                    li {
+                        padding: .8rem 3rem .8rem .8rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10%;
+    align-items: center;
+    color: $textColor;
+    height: 90vh;
+    background-color: $secondaryColor;
+
+}
+.intro1 {
+    opacity: 0%;
+    animation: 5s ease 2s testing;
+}
+.intro2 {
+    opacity: 0%;
+    animation: 5s ease 6s testing;
+}
+.intro3 {
+    opacity: 0%;
+    animation: 5s ease 10s testing;
+}
+
+
+@keyframes testing {
+    75%{
+        opacity: 100%;
+    }
+}
+
