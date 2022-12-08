@@ -1,8 +1,6 @@
 let intro = document.querySelector('.intro');
 
 
-
-
 window.onload = init();
 
 function init(){

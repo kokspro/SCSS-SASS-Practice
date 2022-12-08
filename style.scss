@@ -9,82 +9,63 @@ $textColor: white;
     box-sizing: border-box;
 }
 body {
+    position: relative;
     background-color: rgb(51, 51, 51);
-}
-header {
-    color: $textColor;
-    background-color: $primaryColor;
-    div {
-        display: flex;
-        width: 80%;
-        margin: auto;
-        align-items: center;
-        justify-content: space-between;
-        padding: .5rem;
-        height: 80px;
-        nav {
-            input {
-                display: none;
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        color: $textColor;
+        background-color: $primaryColor;
+        z-index: 1;
+        div {
+            display: flex;
+            width: 90%;
+            margin: auto;
+            align-items: center;
+            justify-content: space-between;
+            padding: .5rem;
+            height: 80px;
+            h1 {
+                font-size: 40px;
             }
-            label {
-                display: none;
-                font-size: 2rem;
-                color: $textColor;
-                float: right;
-                line-height: 1rem;
-                cursor: pointer;
-            }
-            ul {
-                display: flex;
-                list-style-type: none;
-                li {
-                    padding: .5rem;
-                    margin-left: .2rem;
-                    text-transform: uppercase;
-                    font-size: 0.75rem;
-                    a {
-                        text-decoration: none;
-                        color: $textColor;                    
-                    }
-                    &:hover {
-                        border: 1px solid;
-                        border-color: rgb(39, 37, 37) darkgray darkgray rgb(39, 37, 37);
-                        background-color: #46128a;
-                    }
+            nav {
+                input {
+                    display: none;
                 }
-                
+                label {
+                    display: none;
+                    font-size: 2rem;
+                    color: $textColor;
+                    float: right;
+                    line-height: 1rem;
+                    cursor: pointer;
+                }
+                ul {
+                    display: flex;
+                    list-style-type: none;
+                    li {
+                        padding: .5rem;
+                        margin-left: .2rem;
+                        text-transform: uppercase;
+                        font-size: 1rem;
+                        a {
+                            text-decoration: none;
+                            color: $textColor;                    
+                        }
+                        &:hover {
+                            border: 1px solid;
+                            border-color: rgb(39, 37, 37) darkgray darkgray rgb(39, 37, 37);
+                            background-color: #46128a;
+                        }
+                    }
+                    
+                }
             }
         }
     }
 }
 
-@media (max-width: 768px) {
-    header {
-        div {
-            nav {
-                input:checked ~ ul {
-                    right: 0rem;
-                }
-                label {
-                    display: block;
-                }
-                ul {
-                    position: fixed;
-                    display: block;
-                    flex-direction: column;
-                    right: -100%;
-                    background-color: $primaryColor;
-                    text-align: center;
-                    transition: all .5s;
-                    top: 80px;
-                    li {
-                        padding: .8rem 3rem .8rem .8rem;
-                    }
-                }
-            }
-        }
-    }
-}
 
 .intro {
     display: flex;
@@ -92,8 +73,16 @@ header {
     padding-top: 10%;
     align-items: center;
     color: $textColor;
-    height: 90vh;
+    height: 100vh;
     background-color: $secondaryColor;
+}
+
+.contentContainer {
+    padding: 130px 0;
+    background: linear-gradient(to bottom right, black, white);
+}
+.cardContainer {
+    padding: 1.5rem;
 }
 .intro1 {
     opacity: 0%;
@@ -114,3 +103,104 @@ header {
     }
 }
 
+.card {
+    display: grid;
+    border: solid 3px $tertiaryColor;
+    width: 90%;
+    margin:  4rem auto;
+    border-radius: 2rem;
+    background: rgb(1, 54, 47);
+    max-width: 600px;
+    h1 {
+        text-align: center;
+        margin-top: 20px;
+        color: $textColor;
+    }
+    img {
+        margin: 20px auto;
+        max-width: 100%;
+        max-height: 100%;
+        border: solid 1rem $tertiaryColor;
+        border-radius: 3rem;
+    }
+    p {
+        padding: 1rem 2rem;
+        text-align: center;
+        color: $textColor;
+        margin: 0 0 1rem;
+    }
+    div {
+        display: flex;
+        justify-content: space-between;
+        margin: 0.5rem 1.5rem 0.5rem 2rem;
+        button {
+            padding: .8rem 1rem;
+            border-radius: 1rem;
+            background-color: $primaryColor;
+            color: $textColor;
+            border: solid 1px $tertiaryColor;
+        }
+        button:hover {
+            background-color: #46128a;
+            cursor: pointer;
+        }
+    }
+}
+
+.card-1 {
+    width: 80%;
+    margin:  5rem auto;
+    background: blue;
+}
+.card-2 {
+    width: 80%;
+    margin: 5rem auto;
+    background: red;
+}
+.card-3 {
+    width: 80%;
+    margin: 5rem auto;
+    background: yellow;
+}
+.card-4 {
+    width: 80%;
+    margin: 5rem auto;
+    background: black;
+}
+
+@media (max-width: 768px) {
+    body {
+        header {
+            div {
+                width: 95%;
+                h1 {
+                    font-size: 30px;
+                }
+                nav {
+                    input:checked ~ ul {
+                        right: 0rem;
+                    }
+                    label {
+                        display: block;
+                    }
+                    ul {
+                        position: fixed;
+                        display: block;
+                        flex-direction: column;
+                        right: -100%;
+                        background-color: $primaryColor;
+                        text-align: left;
+                        transition: all .5s;
+                        top: 80px;
+                        li {
+                            padding: .8rem 3rem .8rem .8rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .card {
+        width: 80%;
+    }
+}
